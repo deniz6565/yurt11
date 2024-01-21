@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello LoginController!{% endblock %}
+
+{% block body %}
+<style>
+   .form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+body {
+
+	}
+	.form-signin{
+		 
+
+	}
+	</style>
+
+	<div class="container bg-gray">
+	   <main class="form-signin w-100 m-auto">
+	  <form class="form py-5 mt-5 p-3 border" method="post">
+		
+		<h1 class="h3 mb-3 fw-normal">Lütfen Giriş Yapınız</h1>
+
+		<div class="form-group">
+		  <label for="floatingInput">Kullanıcı Adı</label>
+		  <input type="email"  name ="email"class="form-control" id="floatingInput" placeholder="Mail Adresi" required>
+		  
+		</div>
+		<div class="form-group">
+		<label for="floatingPassword">Şifre</label>
+		  <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Şifre" required>
+		</div>
+		
+		<div class="d-flex" >
+		<button class="btn btn-primary w-100  m-2" type="submit">Giriş Yap</button>
+		<a  href="/register" class="btn btn-outline-primary  w-100 m-2">Üye Ol</a>
+		</div>
+	  </form>
+	</main>
+	</div>
+	{% endblock %}

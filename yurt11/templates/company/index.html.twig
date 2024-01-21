@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CompanyController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<body><header>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand right:15px">BESTSOFT</a>
+  </div>
+</nav>
+</header>
+    <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                     <li class="nav-item">
+                        <a href="article" class="nav-link align-middle px-0 text-white">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline color:white">KULLANICILAR</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="company" class="nav-link align-middle px-0 text-white">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline color:white">İŞLETMELER</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="student" class="nav-link align-middle px-0 text-white">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline color:white">ÖĞRENCİLER</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="room" class="nav-link align-middle px-0 text-white">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline color:white">ODALAR</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="room_student_mapp" class="nav-link align-middle px-0 text-white">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline color:white">ÖĞRENCİ-ODA ATAMASI</span>
+                        </a>
+                    </li>
+                       
+                </ul>
+                <hr>
+                
+            </div>
+        </div>
+        <div class="col py-3">
+            <div class="example-wrapper">
+   <a  href="/companyRegister" class="btn btn-success  w-100 m-2">EKLE</a>
+                {% if articles %}
+                    <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th>Company Title</th>
+                        <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%  for article in articles %}
+                        <tr>
+                            <td>{{ article.company_name }}</td>
+                            <td>
+                            <a href="/companyDetail/{{ article.id}}" class="btn btn-dark">Detail</a>
+                            </td>
+                            
+                            <td>
+                            <a href="/companyUpdate/{{ article.id}}" class="btn btn-info">Update</a>
+                            </td>
+
+                            <td>
+                            <a href="/companyDelete/{{ article.id}}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    
+                    </table>
+                {% else %}
+                    <p>Articles yok</p>
+                {% endif %}
+</div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+{% endblock %}

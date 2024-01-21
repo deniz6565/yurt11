@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} {{ room.room_name }} {% endblock %}
+
+{% block body %}
+<header>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand right:15px">BESTSOFT</a>
+  </div>
+</nav>
+</header>
+  <div class="row flex-nowrap">
+        <div class="col-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                     <li class="nav-item">
+                        <a href="article" class="nav-link align-middle px-0 text-white">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline color:white">KULLANICILAR</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="company" class="nav-link align-middle px-0 text-white">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline color:white">İŞLETMELER</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="student" class="nav-link align-middle px-0 text-white">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline color:white">ÖĞRENCİLER</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="room_student_mapp" class="nav-link align-middle px-0 text-white">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline color:white">ODALAR</span>
+                        </a>
+                    </li>
+                       
+                </ul>
+                <hr>
+                
+            </div>
+        </div>
+        <div class="col-10">
+        <div class="container-fluid">
+  <p> İSim  : {{ room.room_name }}</p>
+  <p> Numara : {{ room.room_number }}</p>
+  <p> Yatak Sayısı :{{ room.bed_capacity }}</p>
+  
+<hr>
+  <a href="/room" class="btn btn-light">Go Back</a>
+  </div>
+        </div>
+    </div>
+
+{% endblock %}
